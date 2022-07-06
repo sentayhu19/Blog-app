@@ -1,24 +1,54 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Blog App
 
-Things you may want to cover:
+This is a Catalog of things created with Ruby
 
-* Ruby version
+### Description
+A fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts. Built with Ruby on Rails.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+### Cloning the project
 
-* Database initialization
+ git clone https://github.com/sentayhu19/Blog-app <Your-Build-Directory>
+``` 
+- cd Catalog-of-my-things
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Built with
+- Ruby on Rails
+- PostgreSQL
 
-* Deployment instructions
+## Prerequisites
 
-* ...
+Vscode or anyother
+Setup
+## Install
+    Ruby
+    Rails
+## Run tests
+    Run bundle install
+    Run rubocop
+
+## Author
+
+👤 **Sentayhu Berhanu**
+
+- GitHub: [@sentayhu19](https://github.com/sentayhu19)
+- LinkedIn: [sentayhu-berhanu](https://www.linkedin.com/in/sentayhu-berhanu-6376579a/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/sentayhu19/Catalog-of-my-things/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
