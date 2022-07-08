@@ -5,6 +5,6 @@ RSpec.describe Comment, type: :model do
   before { subject.save }
 
   it 'No post raise error' do
-    expect { subject.comment_counter}.to raise_error(NoMethodError)
+    expect { subject.comment_counter }.to raise_error(NoMethodError)
   end
 end
