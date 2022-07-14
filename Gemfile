@@ -4,11 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 gem 'ffi', '~> 1.15.5'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop-discourse'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
-gem 'rspec-rails'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -57,7 +57,6 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
