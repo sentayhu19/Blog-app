@@ -7,10 +7,7 @@ RSpec.describe Post, type: :model do
                      _217516770_nHjCK3C82B2ZUC3JB3qQs8W2BGLHxZfa.jpg', bio: 'I love AI', posts_counter: 0)
     Post.create!(title: 'Faster than a speeding bullet, more powerful than a locomotive…
       The Man of Steel fights a never-ending battle for truth, justice, and the American way.
-      From his blue uniform to his flowing red cape to the "S" shield on his chest, Superman
-      is one of the most immediately recognizable and beloved DC Super Heroes of all time.
-      The Man of Steel is the ultimate symbol of truth, justice, and hope. He is the
-      worlds first Super Hero and a guiding light to all.', text: 'This post is to talk
+      From his blue uniform to his flowing red cape', text: 'This post is to talk
       about AI', likes_counter: 0, comments_counter: 0,
                  user: user1)
   end
