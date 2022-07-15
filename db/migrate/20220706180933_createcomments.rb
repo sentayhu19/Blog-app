@@ -3,5 +3,6 @@ class Createcomments < ActiveRecord::Migration[7.0]
     create_table :comments do |t|
       t.text :text
       t.timestamps
+    end
   end
 end
