@@ -1,0 +1,33 @@
+<div class="container">
+<div class="post">
+  <div class="comment-header">
+    <h2>
+      Post by <%= post.user.name %>
+    </h2>
+    <small>
+      <span>Comment: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
+    </small>
+  </div>
+  <p>
+    <%= post.text %>
+  </p>
+   Likes
+</div>
+<div class="comments-wrapper">
+  <h3>Comments:</h3>
+  <% if @post.comments.empty? %>
+    <p>There no comment!</p>
+  <% end %>
+  <% @post.comments.each do |comment| %>
+    <div class="comment-card">
+      <strong>
+        <%= link_to user_path(comment.author_id) do %>
+          <%= comment.user.name %>
+        <% end %>
+        :
+      </strong>
+      <%= comment.text %>
+    </div>
+  <% end %>
+</div>
+</div>
