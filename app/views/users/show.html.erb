@@ -1,1 +1,14 @@
-<p>details of user</p>
+<%= render @user %>
+<div>
+<div class="bio">
+<b>Bio</b>
+ <p><%= @user.bio %></p>
+ </div>
+  <div class="card-list">
+      <% @recent_posts.each do |post| %>
+        <%= render post %>
+          <% end %>
+    </div>
+  <br/>
+  <%= link_to "See all posts" , user_posts_path(@user) if @user.posts_counter> 0 %>
+</div>

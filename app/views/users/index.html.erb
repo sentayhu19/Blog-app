@@ -1,1 +1,9 @@
-<p>Show List of users</p>
+
+<div class="main-wrap">
+<h1>Users :</h1>
+<div id="users">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</div>
+</div>

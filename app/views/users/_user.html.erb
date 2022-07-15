@@ -1,0 +1,24 @@
+<%= link_to user do %>
+<div class="main-wrap">
+<div class="card" id="users">
+  <div class="f-row">
+    <div class="img-wrap">
+    <img  src="<%=user.photo%>" alt="user photo" class="user-img" />
+    </div>
+    <div class="user-card">
+    <div class="user-name">
+      <h2 >
+      <%= user.name %>
+    </h2>  
+    </div>
+    <div class="no-posts">
+     <small >
+      Number of posts: <%= user.posts_counter %>
+    </small>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<% end %>

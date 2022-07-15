@@ -1,3 +1,11 @@
-<div>
-<p>Post made by users</p>
+ <%= render partial: "users/user" , locals: { user: @user } %>
+ 
+<div class="post-container">
+  <% @posts.each_with_index do |post, index| %>
+    <%= render partial: "posts" , locals: { post: post, index: index } %>
+      <ul>
+        <% post.comments.each do |comment| %>
+          <% end %>
+      </ul>
+      <% end %>
 </div>
