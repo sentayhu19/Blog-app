@@ -2,7 +2,7 @@
  
 <div class="container">
   <% @posts.each_with_index do |post, index| %>
-    <%= render partial: "post" , locals: { post: post, index: index } %>
+    <%= render partial: post.title , locals: { post: post, index: index } %>
       <ul>
         <% post.comments.each do |comment| %>
           <li>
