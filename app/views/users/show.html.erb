@@ -1,14 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
 <%= render @user %>
+<div class="container">
+<div class="card mt-4 p-4">
+  <h4>Bio</h4>
+  <p class="text-muted">
+    <%= @user.bio %>
+  </p>
+</div>
 <div>
-<div class="bio">
-<b>Bio</b>
- <p><%= @user.bio %></p>
- </div>
-  <div class="card-list">
-      <% @recent_posts.each do |post| %>
-        <%= render post %>
-          <% end %>
-    </div>
-  <br/>
-  <%= link_to "See all posts" , user_posts_path(@user) if @user.posts_counter> 0 %>
+ <div>
+    <% @recent_posts.each do |post, index| %>
+      <%= render partial: "posts/post" , locals: { post: post, index: index } %>
+        <% end %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= link_to "New post", new_user_post_path(@user) %>
+ <%= link_to "See all posts" , user_posts_path(@user) if @user.posts_counter> 0 %>
+
+  </div>
+</div>
+</div>
 </div>

@@ -14,6 +14,7 @@ A fully functional website that will show the list of posts and empower readers 
  git clone https://github.com/sentayhu19/Blog-app <Your-Build-Directory>
 ``` 
 - cd Blog-app
+rails s
 ```
 
 

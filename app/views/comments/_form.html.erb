@@ -1,0 +1,7 @@
+<div class="container">
+<%= form_with model: comment, url: user_post_comments_url(author_id, post), class: 'form' do |f| %>
+  <%= f.text_area :text,style:"width:100%" %>
+  <br>
+  <%= f.submit "Comment" %>
+<% end %>
+</div>
