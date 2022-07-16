@@ -1,3 +1,4 @@
+<p style="color: green"><%= notice %></p>
 
 <h1>Likes</h1>
 
@@ -5,7 +6,7 @@
   <% @likes.each do |like| %>
     <%= render like %>
     <p>
-      <%= link_to "Show Like", like %>
+      <%= link_to "Show this like", like %>
     </p>
   <% end %>
 </div>
