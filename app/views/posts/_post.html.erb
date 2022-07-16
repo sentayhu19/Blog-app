@@ -1,7 +1,6 @@
-<div class="post-main-wrap">
-<div class="post-wrap">
+<div class="card">
  <h2>
-    <span>Post #<%= post.id  %></span>
+    <span>Post #<%=  %></span>
     <span>
       <%= post.title %>
     </span>
@@ -9,10 +8,9 @@
    <p>
     <%= post.text %>
   </p>
-  </div>
-  <div class="counter">
+  <div class="comment">
   <small>
-    <span>Comment: <%= post.comments_counter %>, </span>
+    <span>Comment: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></span>
   </small>
   </div>
 </div>

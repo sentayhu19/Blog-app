@@ -11,12 +11,12 @@
   <p>
     <%= post.text %>
   </p>
-   Likes
+   <%= render partial: "likes/form", locals: { like: Like.new, user: post.user, post: post } %>
 </div>
 <div class="comments-wrapper">
   <h3>Comments:</h3>
   <% if @post.comments.empty? %>
-    <p>There no comment!</p>
+    <p>There no comment so far!</p>
   <% end %>
   <% @post.comments.each do |comment| %>
     <div class="comment-card">
@@ -29,5 +29,8 @@
       <%= comment.text %>
     </div>
   <% end %>
+
+  <h3>Add new comment:</h3>
+  <%= render partial: "comments/form", locals: { comment: Comment.new, author_id: @post.author_id, post: @post } %>
 </div>
 </div>

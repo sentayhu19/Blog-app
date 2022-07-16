@@ -1,0 +1,3 @@
+<%= form_with model: like, url: user_post_likes_url(user, post), method: :post, class: 'inline' do |f| %>
+  <%= f.submit "#{post.likes_counter || 0} Likes" %>
+<% end %>

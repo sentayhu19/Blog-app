@@ -1,21 +1,20 @@
 <%= link_to user do %>
-<div class="main-wrap">
+<div class="container mt-4">
 <div class="card" id="users">
-  <div class="f-row">
-    <div class="img-wrap">
-    <img  src="<%=user.photo%>" alt="user photo" class="user-img" />
+  <div class="row">
+    <div class="col-lg-4">
+    <img src="<%= asset_path(user.photo) %>" alt="user photo" class="img-fluid post-img" />
     </div>
-    <div class="user-card">
-    <div class="user-name">
-      <h2 >
+    <div class="col-lg-8">
+      <h2>
       <%= user.name %>
-    </h2>  
-    </div>
-    <div class="no-posts">
-     <small >
+    </h2>
+    <div class="d-flex w-100 justify-content-end p-3">
+    <small>
       Number of posts: <%= user.posts_counter %>
     </small>
     </div>
+    
     </div>
   </div>
 </div>

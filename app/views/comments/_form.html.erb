@@ -1,0 +1,6 @@
+<div class="main-container">
+<%= form_with model: comment, url: user_post_comments_url(author_id, post), class: 'form' do |f| %>
+  <br>
+  <%= f.submit "Comment" %>
+<% end %>
+</div>
