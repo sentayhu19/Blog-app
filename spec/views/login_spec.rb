@@ -2,18 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Login', type: :feature do
   before :each do
-    User.create!(name: 'Testing', posts_counter: 0, email: 'user@example.com', password: 'password',
-                confirmed_at: '2022-03-02 22:25:13.71382')
+    User.create(name: 'Testing', posts_counter: 0, email: 'user@example.com', password: 'password',
+                confirmed_at: '2022-07-19 22:25:13.71382')
   end
 
-  it 'can enter a name and receive a greeting' do
+  it 'can see the log in button, user[email] and user[password]' do
     visit user_session_path
     expect(page).to have_content 'Log in'
-  end
-
-  it 'user can see inputs and button' do
-    visit user_session_path
-    expect(page).to have_current_path(user_session_path)
+    expect(page).to have_field 'user[email]'
+    expect(page).to have_field 'user[password]'
   end
 
   it 'click the login button with no inputs' do
@@ -25,8 +22,8 @@ RSpec.describe 'Login', type: :feature do
   it 'click the login button with wrong inputs ' do
     visit 'users/sign_in'
     within('form') do
-      fill_in 'user[email]', with: 'incorrect@incorrect'
-      fill_in 'user[password]', with: 'incorrect'
+      fill_in 'user[email]', with: 'wronguser@incorrect'
+      fill_in 'user[password]', with: 'wrongpassowrd'
     end
     click_button 'Log in'
     expect(page).to have_content 'Invalid Email or password.'
