@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.feature 'Login', type: :feature do
+RSpec.describe 'Login', type: :feature do
   before :each do
-    User.create(name: 'Testing', posts_counter: 0, email: 'user@example.com', password: 'password',
+    User.create!(name: 'Testing', posts_counter: 0, email: 'user@example.com', password: 'password',
                 confirmed_at: '2022-03-02 22:25:13.71382')
   end
 
