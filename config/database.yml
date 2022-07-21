@@ -16,11 +16,6 @@
 #
 default: &default
   adapter: postgresql
-  database: blog_app-sent
-  pool: 5
-  username: postgres
-  password: Instant12.,
-  host: localhost
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -29,11 +24,7 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: blog_app2-sent
-  pool: 5
-  username: postgres
-  password: Instant12.,
-  host: localhost
+  database: blog_app-senta
   encoding: unicode
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -67,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blog_app2_test-sent
+  database: blog_app-test-senta
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -91,6 +82,6 @@ test:
 #
 production:
   <<: *default
-  database: blog_app2_production-sent
+  database: blog_app2_production
   username: postgres
   password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>

@@ -32,9 +32,12 @@ class PostsController < ApplicationController
     render :new
   end
 
-  def destroy_post
+  def destroy
     post = Post.find(params[:id])
+    user = User.find(post.author_id)
+    user.posts_counter -= 1
     post.destroy
-    redirect_to user_posts_url(post.author_id)
+    user.save flash[:alert] = 'You have successfully deleted the post!'
+    redirect_to user_posts_path(post.author_id)
   end
 end

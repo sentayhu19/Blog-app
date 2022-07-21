@@ -2,7 +2,7 @@
  <h2>
     <span>Post #<%=  %></span>
     <span>
-      <%= post.title %>
+      <%= link_to post.title, [post.user, post] %> 
     </span>
   </h2>
    <p>
