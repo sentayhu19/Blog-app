@@ -38,9 +38,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_123505) do
     t.text "text"
     t.integer "comments_counter"
     t.integer "likes_counter"
+    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "author_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_123505) do
     t.string "name"
     t.text "bio"
     t.string "photo"
-    t.integer "posts_counter", default: 0
+    t.integer "posts_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -65,4 +65,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_123505) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "posts", "users", column: "author_id"
 end
