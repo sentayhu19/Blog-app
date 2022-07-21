@@ -1,7 +1,7 @@
 <div>
   <%= render partial: "post_details" , locals: { post: @post } %>
   <% if can? :destroy, @post %>
-    <%= button_to 'Delete Post', "/users/#{params[:user_id]}/posts/#{@post.id}", class: "btn text-dark btn-danger", method: :delete %>
+    <%= button_to 'Delete Post', "/users/#{params[:user_id]}/posts/#{@post.id}",  data: { "turbo-method": :delete , "turbo-confirm": "Are you sure?" }, class: "btn text-dark btn-danger" %>
   <% end %> 
 </div>
 

@@ -17,8 +17,8 @@ class User < ApplicationRecord
   end
   # Roles = [ :admin , :default ]
 
-  def admin?(_requested_role)
-    role == requested.role.to_s
-    # :role == 'admin'
+  def admin?
+    # role == requested.role.to_s
+    :role == 'admin'
   end
 end
