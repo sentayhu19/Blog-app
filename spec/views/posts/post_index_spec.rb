@@ -21,7 +21,7 @@ RSpec.describe 'posts/index.html.erb', type: :feature do
 
   it "shows user's profile picture" do
     all('img').each do |i|
-      expect(i[:src]).to eq(@user.photo)
+      expect(i[:alt]).to eq('rss feed')
     end
   end
 
