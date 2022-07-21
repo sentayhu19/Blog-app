@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_20_092435) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_21_123505) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,9 +38,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_20_092435) do
     t.text "text"
     t.integer "comments_counter"
     t.integer "likes_counter"
-    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_20_092435) do
     t.string "name"
     t.text "bio"
     t.string "photo"
-    t.integer "posts_counter"
+    t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -60,9 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_20_092435) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "role"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "posts", "users", column: "author_id"
 end

@@ -1,5 +1,7 @@
 <div>
   <%= render partial: "post_details" , locals: { post: @post } %>
+  <% if can? :destroy, post %>
+  <%= button_to 'Delete Post', user_post_path(@post.author_id), method:delete %>
 </div>
 <div class="posts">
 

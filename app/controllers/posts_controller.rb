@@ -25,6 +25,11 @@ class PostsController < ApplicationController
       @post = new_post
       render :new
     end
+    def destroy_post
+      post = Post.find(params[:id])
+      post.destroy
+      redirect_to user_posts_url(post.author_id)
+    end
   end
 
   def new
