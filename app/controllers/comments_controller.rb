@@ -42,6 +42,7 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
+
   def destroy
     @comment = Comment.find(params[:comment_id])
     @post = Post.find(@comment.post_id)
