@@ -13,6 +13,9 @@
   </p>
    <%= render partial: "likes/form", locals: { like: Like.new, user: post.user, post: post } %>
 </div>
+<% if can? :destroy, @post %>
+    <%= button_to 'Delete Post', "/users/#{params[:user_id]}/posts/#{@post.id}",  data: { "turbo-method": :delete , "turbo-confirm": "Are you sure?" }, class: "btn text-white btn-danger delete-post" %>
+  <% end %> 
 <div class="comments-wrapper">
   <h3>Comments:</h3>
   <% if @post.comments.empty? %>
@@ -28,6 +31,9 @@
       </strong>
       <%= comment.text %>
     </div>
+       <% if can? :destroy, @post %>
+    <%= button_to 'Delete Comment', "/users/#{params[:user_id]}/posts/#{@post.id}",  method: :delete, class: "btn text-white btn-danger" %>
+  <% end %>
   <% end %>
 
   <h3>Add new comment:</h3>
